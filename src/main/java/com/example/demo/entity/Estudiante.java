@@ -40,12 +40,25 @@ public class Estudiante {
 	private String nivelPensamientoCientifico;
 	private int diseñoSoftware;
 	private String nivelDiseñoSoftware;
+	private String estado;
 
 	public Estudiante() {
 		super();
 	}
 
 	
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+
 
 	public Estudiante(String id, String usuario, String contrasena, String tipoDocumento, String numeroDocumento,
 			String primerApellido, String segundoApellido, String primerNombre, String segundoNombre,
@@ -88,6 +101,8 @@ public class Estudiante {
 		this.nivelPensamientoCientifico = nivelPensamientoCientifico;
 		this.diseñoSoftware = diseñoSoftware;
 		this.nivelDiseñoSoftware = nivelDiseñoSoftware;
+		this.estado =  estado;
+
 	}
 
 

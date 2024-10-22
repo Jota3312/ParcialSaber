@@ -12,7 +12,7 @@
     <style>
         body {
             height: 100vh;
-            background-image: url('			https://i.pinimg.com/564x/58/77/74/58777498b5e1428ef327a7e96c05d4db.jpg');
+            background-image: url('https://i.pinimg.com/564x/58/77/74/58777498b5e1428ef327a7e96c05d4db.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -34,8 +34,8 @@
         }
 
         .navbar-title {
-            position: absolute !important;
-            left: 50% !important;
+            position: absolute;
+            left: 50%;
             transform: translateX(-50%);
             color: white; /* Cambiado para mejorar la visibilidad sobre el fondo */
         }
@@ -63,7 +63,17 @@
         }
 
         .btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            background-color: #006666; /* Cambio de color en hover */
+        }
+
+        .btn-primary {
+            background-color: #008080; /* Color personalizado */
+            border: none; /* Sin borde */
+        }
+
+        .btn-primary:hover {
+            background-color: #006666; /* Color en hover */
         }
     </style>
 </head>
@@ -71,7 +81,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
         <a class="navbar-brand" th:href="@{/estudiante/index}">
-			<img src="../img/saberprologo.png" width="200" height="90" style="margin-left: 20px;" class="d-inline-block align-top" alt="Logo">
+            <img src="../img/saberprologo.png" width="200" height="90" style="margin-left: 20px;" class="d-inline-block align-top" alt="Logo">
         </a>
         <div class="navbar-title">
             <h1>PRUEBAS SABER PRO</h1>
@@ -80,24 +90,24 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-		            <ul class="navbar-nav">
-		                <li class="nav-item">
-		                    <a class="btn my-2 my-sm-0" type="submit" th:href="@{/}">
-		                        <button class="Btn">
-		                            <div class="sign">
-		                                <svg viewBox="0 0 512 512">
-		                                    <path
-		                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-		                                    </path>
-		                                </svg>
-		                            </div>
-		                            <div class="text">Logout</div>
-		                        </button>
-		                    </a>
-		                </li>
-		            </ul>
-		        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn my-2 my-sm-0" type="submit" th:href="@{/}">
+                        <button class="Btn">
+                            <div class="sign">
+                                <svg viewBox="0 0 512 512">
+                                    <path
+                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text">Logout</div>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
         <div class="title">
@@ -108,8 +118,8 @@
             <a th:href="@{/estudiante/resultadoTotal}" title="Resultado Total" class="btn btn-primary btn-lg btn-large">
                 <i class="bi bi-clipboard-check-fill" style="font-size: 40px;"></i> Resultado General
             </a>
-            <a th:href="@{/estudiante/resultadoUnico}" title="Resultado Unico" class="btn btn-primary btn-lg btn-large">
-                <i class="bi bi-clipboard-data-fill" style="font-size: 40px;"></i> Resultado Especifico
+            <a th:href="@{/estudiante/resultadoUnico}" title="Resultado Único" class="btn btn-primary btn-lg btn-large">
+                <i class="bi bi-clipboard-data-fill" style="font-size: 40px;"></i> Resultado Específico
             </a>
         </div>
     </div>

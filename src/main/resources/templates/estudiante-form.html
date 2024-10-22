@@ -11,82 +11,87 @@
 	<link rel="icon" href="/img/iconoWeb.webp" type="image/x-icon">
 
 	<style>
-		body {
-			height: 100vh;
-			background-image: url('			https://i.pinimg.com/enabled_hi/564x/06/dd/d1/06ddd1fedd26aa19b245cf915c2b7727.jpg');
-		}
+			body {
+				font-family: Arial, sans-serif;
+				background-color: white;
+				background-size: cover;
+			}
 
-		label {
-			margin-bottom: 0.2rem;
-		}
+			table {
+				background-color: aliceblue;
+			}
 
-		.form-control {
-			width: calc(58% - 5px);
-		}
+			.table-info {
+				background-color: rgb(64, 128, 128);
+				color: white;
+				text-align: center; /* Centrar texto en encabezados */
+			}
 
-		.input-with-level {
-			width: calc(55% - 8px);
-			/* 1/3 del ancho del contenedor en dispositivos medianos */
-			display: flex;
-		}
+			.navbar {
+				background-color: rgb(0, 128, 128) !important;
+				color: white;
+			}
 
-		.back {
-			background-color: rgb(255, 255, 255);
-			padding-left: 10%;
-			margin-top:3%;
-			padding-top: 2%;
-		}
+			.Btn {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				width: 45px;
+				height: 45px;
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+				position: relative;
+				overflow: hidden;
+				transition-duration: .3s;
+				box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+				background-color: rgb(255, 65, 65);
+			}
 
-		.navbar {
-			padding: 8px 16px !important;
-			color: white;
-			background-color: rgb(0, 179, 179) !important;
-		}
+			.sign {
+				width: 100%;
+				transition-duration: .3s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
-		h1 {
-			text-align: center;
-			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		}
-	</style>
+			.text {
+				position: absolute;
+				right: 0%;
+				width: 0%;
+				opacity: 0;
+				color: white;
+				font-size: 1.2em;
+				font-weight: 600;
+				transition-duration: .3s;
+			}
+
+			.Btn:hover {
+				width: 125px;
+				border-radius: 40px;
+				transition-duration: .3s;
+			}
+
+			.Btn:hover .text {
+				opacity: 1;
+				width: 70%;
+				transition-duration: .3s;
+			}
+
+			.Btn:active {
+				transform: translate(2px, 2px);
+			}
+		</style>
 </head>
 
 <body>
 	
-	<nav class="navbar navbar-expand-lg navbar-primary bg-light">
-		<a class="navbar-brand" th:href="@{/coordinador/index}">
-			<!-- Puedes cambiar "Logo" por la imagen que desees -->
-			<img src="/img/saberprologo.png" width="200" height="80" class="d-inline-block align-top" alt="Logo">
-			<!-- O si prefieres solo texto -->
-			<!-- Logo -->
-		</a>
-		<div class="navbar-title">
-			<!-- Título -->
-			<h1>Formulario de registro de puntajes-Estudiante</h1>
-		</div>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-				            <ul class="navbar-nav">
-				                <li class="nav-item">
-				                    <a class="btn my-2 my-sm-0" type="submit" th:href="@{/coordinador/index}">
-				                        <button class="Btn">
-				                            <div class="sign">
-				                                <svg viewBox="0 0 512 512">
-				                                    <path
-				                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-				                                    </path>
-				                                </svg>
-				                            </div>
-				                            <div class="text">Logout</div>
-				                        </button>
-				                    </a>
-				                </li>
-				            </ul>
-				        </div>
-	</nav>
+	
+		
 	<div>
+		
+		
 	<div class="	back container ">
 		<h2 class="mt-4 mb-4"></h2>
 		<div>
@@ -171,7 +176,7 @@
 					</div>
 					<div class="col-md-6 mb-3">
 						<label for="totalLevel">Saber Pro Nivel:</label>
-						<input th:field="*{nivelSaberPro}" type="text" class="form-control input-with-level"
+						<input th:field="*{puntajeNivel}" type="text" class="form-control input-with-level"
 							id="totalLevel" readonly>
 					</div>
 				</div>
@@ -278,6 +283,12 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-primary">Enviar</button>
+				<a class="btn btn-secondary me-auto" th:href="@{/coordinador/estudiante/informe/volver}">
+									    <i class="bi bi-arrow-left"></i> Cancelar
+									</a>
+		
+
+				
 			</form>
 			<br>
 		</div>

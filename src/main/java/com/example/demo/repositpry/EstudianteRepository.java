@@ -6,4 +6,6 @@ import com.example.demo.entity.Estudiante;
 
 public interface EstudianteRepository extends MongoRepository<Estudiante, String> {
 
+	Estudiante findByUsuario(String usuario);
+
 }
